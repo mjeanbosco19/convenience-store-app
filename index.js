@@ -43,7 +43,7 @@ function renderProducts(){
                 alt="">
             <h3 class="mt-6 text-gray-900 text-2xl font-medium">${product.name} </h3>
             <dl class="mt-1 flex-grow flex flex-col justify-between">
-                <dd class="text-gray-500 text-lg">Store A</dd>
+                <dd class="text-gray-500 text-lg">${product.store} Store </dd>
                 <dd class="mt-3">
                     <span
                         class="px-3 py-2 text-center text-green-800 text-lg  font-medium bg-green-100 rounded-full">${product.status}</span>
@@ -63,13 +63,14 @@ function renderProducts(){
 const saveProduct=(e)=>{
 e.preventDefault();
 let name = form['name'].value;
+let store = form['store'].value;
 let price = form['price'].value;
 let category = form['category'].value;
 let date = form['date'].value;
 let photo = form['photo'].value;
 let desrciption = form['desrciption'].value;
 let status = form['status'].value;
-products.push({name,price,status,category,date,photo:LINK,desrciption});
+products.push({name,store,price,status,category,date,photo:LINK,desrciption});
 renderProducts();
 newProductModal.classList.add("hidden")
 
